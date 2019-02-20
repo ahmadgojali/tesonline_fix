@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 19, 2019 at 03:11 PM
+-- Generation Time: Feb 20, 2019 at 10:31 AM
 -- Server version: 5.0.67
 -- PHP Version: 5.2.6
 
@@ -16,7 +16,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `tesonline`
+-- Database: `bu_tesonline`
 --
 
 -- --------------------------------------------------------
@@ -53,55 +53,12 @@ CREATE TABLE IF NOT EXISTS `jawaban_tes1` (
   `id_soal` int(11) NOT NULL,
   `jawaban` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `jawaban_tes1`
 --
 
-INSERT INTO `jawaban_tes1` (`no`, `id_user`, `id_soal`, `jawaban`) VALUES
-(1, 1, 1, '1'),
-(2, 1, 2, '3'),
-(3, 1, 3, '4'),
-(4, 1, 4, ''),
-(5, 1, 5, ''),
-(6, 1, 6, ''),
-(7, 1, 7, ''),
-(8, 1, 8, ''),
-(9, 1, 9, ''),
-(10, 1, 10, ''),
-(11, 1, 11, ''),
-(12, 1, 12, ''),
-(13, 1, 13, ''),
-(14, 1, 14, ''),
-(15, 1, 15, ''),
-(16, 1, 16, ''),
-(17, 1, 17, ''),
-(18, 1, 18, ''),
-(19, 1, 19, ''),
-(20, 1, 20, ''),
-(21, 1, 21, ''),
-(22, 8, 1, '67'),
-(23, 8, 2, '8'),
-(24, 8, 3, '1/6'),
-(25, 8, 4, '1/6'),
-(26, 8, 5, '5/6'),
-(27, 8, 6, '3/2'),
-(28, 8, 7, '6'),
-(29, 8, 8, '5'),
-(30, 8, 9, '30000'),
-(31, 8, 10, '285'),
-(32, 8, 11, '0'),
-(33, 8, 12, ''),
-(34, 8, 13, '35000'),
-(35, 8, 14, '80'),
-(36, 8, 15, ''),
-(37, 8, 16, ''),
-(38, 8, 17, ''),
-(39, 8, 18, ''),
-(40, 8, 19, ''),
-(41, 8, 20, '1500'),
-(42, 8, 21, '');
 
 -- --------------------------------------------------------
 
@@ -115,103 +72,12 @@ CREATE TABLE IF NOT EXISTS `jawaban_tes2` (
   `id_soal` varchar(255) NOT NULL,
   `jawaban` varchar(255) character set utf8 collate utf8_unicode_ci default NULL,
   PRIMARY KEY  (`no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=91 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `jawaban_tes2`
 --
 
-INSERT INTO `jawaban_tes2` (`no`, `id_user`, `id_soal`, `jawaban`) VALUES
-(1, '1', '1', 'B'),
-(2, '1', '2', 'C'),
-(3, '1', '3', 'D'),
-(4, '1', '4', 'D'),
-(5, '1', '5', 'B'),
-(6, '1', '6', ''),
-(7, '1', '7', ''),
-(8, '1', '8', ''),
-(9, '1', '9', ''),
-(10, '1', '10', ''),
-(11, '1', '11', ''),
-(12, '1', '12', ''),
-(13, '1', '13', ''),
-(14, '1', '14', ''),
-(15, '1', '15', ''),
-(16, '1', '16', ''),
-(17, '1', '17', ''),
-(18, '1', '18', ''),
-(19, '1', '19', ''),
-(20, '1', '20', ''),
-(21, '1', '21', ''),
-(22, '1', '22', ''),
-(23, '1', '23', ''),
-(24, '1', '24', ''),
-(25, '1', '25', ''),
-(26, '1', '26', ''),
-(27, '1', '27', ''),
-(28, '1', '28', ''),
-(29, '1', '29', ''),
-(30, '1', '30', ''),
-(31, '1', '31', ''),
-(32, '1', '32', ''),
-(33, '1', '33', ''),
-(34, '1', '34', ''),
-(35, '1', '35', ''),
-(36, '1', '36', ''),
-(37, '1', '37', ''),
-(38, '1', '38', ''),
-(39, '1', '39', ''),
-(40, '1', '40', ''),
-(41, '1', '41', ''),
-(42, '1', '42', ''),
-(43, '1', '43', ''),
-(44, '1', '44', ''),
-(45, '1', '45', ''),
-(46, '8', '1', 'A'),
-(47, '8', '2', 'C'),
-(48, '8', '3', 'B'),
-(49, '8', '4', 'D'),
-(50, '8', '5', 'B'),
-(51, '8', '6', 'D'),
-(52, '8', '7', 'B'),
-(53, '8', '8', 'B'),
-(54, '8', '9', 'B'),
-(55, '8', '10', 'A'),
-(56, '8', '11', 'A'),
-(57, '8', '12', 'A'),
-(58, '8', '13', 'B'),
-(59, '8', '14', 'A'),
-(60, '8', '15', 'D'),
-(61, '8', '16', 'C'),
-(62, '8', '17', 'B'),
-(63, '8', '18', 'A'),
-(64, '8', '19', 'C'),
-(65, '8', '20', 'C'),
-(66, '8', '21', 'C'),
-(67, '8', '22', 'D'),
-(68, '8', '23', 'D'),
-(69, '8', '24', 'C'),
-(70, '8', '25', 'D'),
-(71, '8', '26', 'C'),
-(72, '8', '27', 'D'),
-(73, '8', '28', 'D'),
-(74, '8', '29', 'A'),
-(75, '8', '30', 'C'),
-(76, '8', '31', 'B'),
-(77, '8', '32', 'C'),
-(78, '8', '33', 'C'),
-(79, '8', '34', 'D'),
-(80, '8', '35', 'D'),
-(81, '8', '36', 'A'),
-(82, '8', '37', 'C'),
-(83, '8', '38', 'B'),
-(84, '8', '39', 'C'),
-(85, '8', '40', 'A'),
-(86, '8', '41', 'C'),
-(87, '8', '42', 'B'),
-(88, '8', '43', 'C'),
-(89, '8', '44', 'D'),
-(90, '8', '45', 'A');
 
 -- --------------------------------------------------------
 
@@ -226,63 +92,12 @@ CREATE TABLE IF NOT EXISTS `jawaban_tes3` (
   `jawaban1` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
   `jawaban2` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `jawaban_tes3`
 --
 
-INSERT INTO `jawaban_tes3` (`no`, `id_user`, `id_soal`, `jawaban1`, `jawaban2`) VALUES
-(1, 1, 1, '', ''),
-(2, 1, 2, '', ''),
-(3, 1, 3, '', ''),
-(4, 1, 4, '', ''),
-(5, 1, 5, '', ''),
-(6, 1, 6, '', ''),
-(7, 1, 7, '', ''),
-(8, 1, 8, '', ''),
-(9, 1, 9, '', ''),
-(10, 1, 10, '', ''),
-(11, 1, 11, '', ''),
-(12, 1, 12, '', ''),
-(13, 1, 13, '', ''),
-(14, 1, 14, '', ''),
-(15, 1, 15, '', ''),
-(16, 1, 16, '', ''),
-(17, 1, 17, '', ''),
-(18, 1, 18, '', ''),
-(19, 1, 19, '', ''),
-(20, 1, 20, '', ''),
-(21, 1, 21, '', ''),
-(22, 1, 22, '', ''),
-(23, 1, 23, '', ''),
-(24, 1, 24, '', ''),
-(25, 1, 25, '', ''),
-(26, 8, 1, '8', '9'),
-(27, 8, 2, '32', '34'),
-(28, 8, 3, '13', '10'),
-(29, 8, 4, '368', '736'),
-(30, 8, 5, '13', '18'),
-(31, 8, 6, '50', '61'),
-(32, 8, 7, '14', '23'),
-(33, 8, 8, '1', '0.5'),
-(34, 8, 9, '6', '-8'),
-(35, 8, 10, '1828', '1833'),
-(36, 8, 11, '1600', '3200'),
-(37, 8, 12, '30', '27'),
-(38, 8, 13, '95.25', '47.625'),
-(39, 8, 14, '60', '4'),
-(40, 8, 15, '35', '9'),
-(41, 8, 16, '43', '33'),
-(42, 8, 17, '24', '13'),
-(43, 8, 18, '10', '0.01'),
-(44, 8, 19, '40', '160'),
-(45, 8, 20, '4', '2'),
-(46, 8, 21, '', ''),
-(47, 8, 22, '', ''),
-(48, 8, 23, '', ''),
-(49, 8, 24, '', ''),
-(50, 8, 25, '', '');
 
 -- --------------------------------------------------------
 
@@ -296,33 +111,12 @@ CREATE TABLE IF NOT EXISTS `jawaban_tes4` (
   `id_soal` int(11) NOT NULL,
   `jawaban` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `jawaban_tes4`
 --
 
-INSERT INTO `jawaban_tes4` (`no`, `id_user`, `id_soal`, `jawaban`) VALUES
-(1, 1, 1, 'C'),
-(2, 1, 2, 'A'),
-(3, 1, 3, 'A'),
-(4, 1, 4, 'A'),
-(5, 1, 5, 'C'),
-(6, 1, 6, 'A'),
-(7, 1, 7, 'D'),
-(8, 1, 8, 'D'),
-(9, 1, 9, 'D'),
-(10, 1, 10, 'A'),
-(11, 8, 1, 'E'),
-(12, 8, 2, 'C'),
-(13, 8, 3, 'A'),
-(14, 8, 4, 'A'),
-(15, 8, 5, 'C'),
-(16, 8, 6, 'E'),
-(17, 8, 7, 'A'),
-(18, 8, 8, 'B'),
-(19, 8, 9, 'A'),
-(20, 8, 10, 'B');
 
 -- --------------------------------------------------------
 
@@ -336,33 +130,20 @@ CREATE TABLE IF NOT EXISTS `jawaban_tes5` (
   `id_soal` int(11) NOT NULL,
   `jawaban` varchar(255) character set utf8 collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `jawaban_tes5`
 --
 
-INSERT INTO `jawaban_tes5` (`no`, `id_user`, `id_soal`, `jawaban`) VALUES
-(1, 1, 1, 'B'),
-(2, 1, 2, 'B'),
-(3, 1, 3, 'D'),
-(4, 1, 4, 'A'),
-(5, 1, 5, 'B'),
-(6, 1, 6, 'A'),
-(7, 8, 1, 'D'),
-(8, 8, 2, 'C'),
-(9, 8, 3, 'A'),
-(10, 8, 4, 'C'),
-(11, 8, 5, 'B'),
-(12, 8, 6, 'D');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jumlah_benar`
+-- Table structure for table `nilai`
 --
 
-CREATE TABLE IF NOT EXISTS `jumlah_benar` (
+CREATE TABLE IF NOT EXISTS `nilai` (
   `no` int(11) NOT NULL auto_increment,
   `id_user` int(11) NOT NULL,
   `tes1` varchar(255) NOT NULL,
@@ -374,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `jumlah_benar` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
--- Dumping data for table `jumlah_benar`
+-- Dumping data for table `nilai`
 --
 
 
@@ -621,7 +402,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pendidikan` varchar(255) NOT NULL,
   `tanggal_tes` datetime default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `user`
@@ -638,4 +419,5 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `email`, `validasi`, `
 (8, 'Fajar', 'Tester1', 'kgmZ0BF6', 'fajar@poseidon.com', 0, '25', '9999999', 'S-1', '2019-02-18 17:24:54'),
 (9, 'Meiliana', 'Tester2', '71cgF1CL', 'meiliana@posseidon.com', 0, '24', '123', 'S-1', NULL),
 (10, 'Dia', 'Dia', '', 'dia@cc.com', 0, '12', '12', 'S-1', NULL),
-(12, 'Ali', 'Ali', '1BakooCIQx', 'ali@gmail.com', 0, '12', '12345678', 'S-1', NULL);
+(12, 'Ali', 'Ali', '1BakooCIQx', 'ali@gmail.com', 0, '12', '12345678', 'S-1', NULL),
+(13, 'Selvi Doang', 'Selvi', 'mDfir4aWuh', 'selvidoang@gmail.com', 0, '28', '08124657898', 'D3', NULL);

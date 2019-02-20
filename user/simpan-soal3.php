@@ -44,6 +44,18 @@ include '../config/koneksi.php';
 
         }
 
+         // masukkan jumlah benar ke tabel nilai
+        if ($hasil) {
+           $query2 = "SELECT user.*, jawaban_tes3.*, soal3.* FROM jawaban_tes3, user, soal3 where jawaban_tes3.id_user = user.id and jawaban_tes3.id_soal = soal3.id and jawaban_tes3.id_user = $session and jawaban_tes3.jawaban1 = soal3.kunci_jawaban1 and jawaban_tes3.jawaban2 = soal3.kunci_jawaban2";
+
+            $hasil2    = mysqli_query($connect, $query2);
+            // $data2     = mysqli_fetch_array($hasil);
+            $jml_benar = mysqli_num_rows($hasil2);
+
+            $insertnilai  = ("UPDATE nilai SET tes3 = '$jml_benar' WHERE id_user = '$session' ");
+            $hasilinsert    = mysqli_query($connect, $insertnilai);
+          }
+
           header("location:mulaisoal4.php");
       }
     }

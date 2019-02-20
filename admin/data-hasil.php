@@ -40,9 +40,9 @@
                           </div>
                         </div>
                       </div> -->
-                       <!--  <div class="tombol-kanan">
-                            <a href="export.php" class="btn btn-default btn-sm ">&nbsp;<i class="fa fa-download"></i>&nbsp; Download&nbsp;</a>
-                        </div> -->
+                        <div class="tombol-kanan">
+                            <a href="export-all.php" class="btn btn-default btn-sm ">&nbsp;<i class="fa fa-download"></i>&nbsp; Export to Excel All Data&nbsp;</a>
+                        </div>
                     </div>
                    
                     <!-- /.box-header -->
