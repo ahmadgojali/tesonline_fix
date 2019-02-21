@@ -63,7 +63,7 @@ include '../config/koneksi.php';
        Petunjuk Pengerjaan Tes 4
       </div>
       <div class="card-body">
-         <p class="lead">Pada test keempat Anda diminta untuk melakukan 2 hal. <br> Pertama adalah soal silogisme Anda diminta untuk mencari sinonim atau antonim dari suatu kata. <br> Yang kedua adalah Anda diminta untuk membaca diagram/tabel. <br> Waktu pengerjaan <b>5 menit</b></p>
+         <p class="lead">Pada test keempat Anda diminta untuk melakukan 2 hal. <br> Pertama adalah soal silogisme Anda diminta untuk mencari sinonim dan antonim dari suatu kata. <br> Yang kedua adalah Anda diminta untuk membaca diagram/tabel. <br> Waktu pengerjaan <b>5 menit</b><br> Kerjakan secepat dan semaksimal mungkin sebelum waktunya selesai.</p>
       </div>
       <div class="card-footer text-muted">
         <!--  <?= @$tombol; ?> -->

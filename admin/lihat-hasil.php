@@ -1,6 +1,8 @@
 <?php include 'templates/header.php'; ?>
 <?php include 'templates/sidebar.php'; ?>
 
+
+
 <style type="text/css"> .tombol-kanan {margin-top: 1px; margin-right: 5px; float: right;}</style>
 
     <?php
@@ -24,7 +26,8 @@
           <!-- <h3 class="box-title">Hasil Diagnosa</h3> -->
           <div>
             <a href="data-hasil.php" class="btn btn-default btn-sm ">&nbsp;<i class="fa fa-arrow-left"></i>&nbsp; Kembali&nbsp;</a>
-            <a href="print2.php?id_user=<?php echo $data['id_user']; ?>" target="_blank" class="btn btn-default btn-sm ">&nbsp;<i class="fa fa-lg fa-print"></i>&nbsp; Cetak&nbsp;</a>
+            <a href="cobaprint.php?id_user=<?php echo $data['id_user']; ?>" target="_blank" class="btn btn-default btn-sm ">&nbsp;<i class="fa fa-lg fa-print"></i>&nbsp; Cetak&nbsp;</a>
+            <!-- <a href="print2.php?id_user=<?php echo $data['id_user']; ?>" target="_blank" class="btn btn-default btn-sm ">&nbsp;<i class="fa fa-lg fa-print"></i>&nbsp; Cetak&nbsp;</a> -->
             <a href="export.php?id_user=<?php echo $data['id_user']; ?>" class="btn btn-default btn-sm float-right">&nbsp;<i class="fa fa-download"></i>&nbsp; Export to Excel&nbsp;</a>
           </div>
           <div class="tombol-kanan">
@@ -64,7 +67,7 @@
                   <!-- <div class="col-md-6"> -->
                     <div class="text-center">Tabel Jawaban Tes 1</i></b><br>Matematika Dasar</div>
                      <div class="">
-                        <table>
+                      <table>
                     
                         <tr>
                           <td>Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp; </td>
@@ -84,15 +87,17 @@
                         </tr>
                         </thead>
                         <tbody>
-                          <!-- tabel cocokin jawaban -->
+                        <!-- tabel cocokin jawaban -->
                         <?php 
-                        $query3 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM `jawaban_tes1`, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user";
+                        // $query3 = "select id,kunci_jawaban from soal1";
+                        
+                        $query3 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM jawaban_tes1, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user";
 
                         $hasil3  = mysqli_query($connect, $query3);
-
                         $nomor = 1;
-                        while($row = mysqli_fetch_array($hasil3)){
 
+                        while($row = mysqli_fetch_array($hasil3)){
+                        // echo jawaban1($row[id],$id_user);
                         $jawaban       = $row['jawaban'];
                         $kunci_jawaban = $row['kunci_jawaban'];
                         // $total = 0;
@@ -100,9 +105,9 @@
                           if ($jawaban == $kunci_jawaban ) {
                               $ket = ' <font color="green" &nbsp;<i class="fa fa-lg  fa-check"></i></font>';
 
-                              // $total = count($ket);
+                              $total += count($ket);
                               // var_dump($total);
-                              // echo "$ket";
+                              // echo "$total";
                           }
                           else {
                                 $ket = '<font color="red" &nbsp;<i class="fa fa-lg  fa-close"></i></font>';
@@ -120,7 +125,7 @@
                         ?>
                         </tbody>
 
-                  
+                        <!-- Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp; <?php echo "$total"; ?> -->
                       </table>
                        
                     </div>
@@ -152,12 +157,12 @@
                           <table id="" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                              <th class=" " width="10"  >No</th>
-                              <th   class="">Jawaban1</th>
-                              <th   class="">Jawaban2</th>
-                              <th  class="">Kunci Jawaban1</th>
-                              <th  class="">Kunci Jawaban2</th>
-                              <th  class="text-center " >Keterangan</th>                              
+                              <th class="" width="10" >No</th>
+                              <th class="">Jawaban1</th>
+                              <th class="">Jawaban2</th>
+                              <th class="">Kunci Jawaban1</th>
+                              <th class="">Kunci Jawaban2</th>
+                              <th class="text-center" >Keterangan</th>                              
                             </tr>
                             </thead>
                             <tbody>
@@ -176,8 +181,12 @@
                             $kunci_jawaban2 = $row['kunci_jawaban2'];
                             // $total = 0;
 
-                               if ($jawaban1 == $kunci_jawaban1 and $jawaban2 == $kunci_jawaban2) {
+                               if ($jawaban1 == $kunci_jawaban1 or $jawaban2 == $kunci_jawaban2) {
                                   $ket = ' <font color="green" &nbsp;<i class="fa fa-lg  fa-check"></i></font>';
+
+                                   // $total += count($ket);
+                                  // var_dump($total);
+                                  // echo "$total";
                               }
                               else {
                                     $ket = '<font color="red" &nbsp;<i class="fa fa-lg  fa-close"></i></font>';
@@ -196,7 +205,7 @@
                               } 
                             ?>
                             </tbody>
-                      
+                            <!-- Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp; <?php echo "$total"; ?> -->
                           </table>
                            
                         </div>
@@ -212,7 +221,7 @@
                         $jml_benar = mysqli_num_rows($hasil2);
 
                      ?>
-                      <!-- col-tabel-tes3 -->
+                      <!-- col-tabel-tes5 -->
                       <div class="box-body">
                         <div class="text-center">Tabel Jawaban Tes 5</i></b><br>Bahasa Inggris</div>
                          <div class="">
@@ -229,10 +238,10 @@
                           <table id="" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                              <th class=" " width="10"  >No</th>
-                              <th   class="">Jawaban</th>
-                              <th  class="">Kunci Jawaban</th>
-                              <th  class="text-center " >Keterangan</th>                              
+                              <th class="" width="10"  >No</th>
+                              <th class="">Jawaban</th>
+                              <th class="">Kunci Jawaban</th>
+                              <th class="text-center " >Keterangan</th>                              
                             </tr>
                             </thead>
                             <tbody>
@@ -251,6 +260,8 @@
 
                                if ($jawaban == $kunci_jawaban) {
                                   $ket = ' <font color="green" &nbsp;<i class="fa fa-lg  fa-check"></i></font>';
+
+                                  // $total += count($ket);
                               }
                               else {
                                     $ket = '<font color="red" &nbsp;<i class="fa fa-lg  fa-close"></i></font>';
@@ -267,7 +278,7 @@
                               } 
                             ?>
                             </tbody>
-                      
+                              <!-- Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp; <?php echo "$total"; ?> -->
                           </table>
                            
                         </div>
@@ -308,10 +319,10 @@
                         <table id="" class="table table-bordered table-hover">
                           <thead>
                           <tr>
-                            <th class=" " width="10"  >No</th>
-                            <th   class="">Jawaban</th>
-                            <th  class="">Kunci Jawaban</th>
-                            <th  class="text-center " >Keterangan</th>                              
+                            <th class="" width="10"  >No</th>
+                            <th class="">Jawaban</th>
+                            <th class="">Kunci Jawaban</th>
+                            <th class="text-center " >Keterangan</th>                              
                           </tr>
                           </thead>
                           <tbody>
@@ -333,6 +344,7 @@
                               if ($jawaban == $kunci_jawaban ) {
                                   $ket = ' <font color="green" &nbsp;<i class="fa fa-lg  fa-check"></i></font>';
 
+                                  // $total += count($ket);
                               }
                               else {
                                     $ket = '<font color="red" &nbsp;<i class="fa fa-lg  fa-close"></i></font>';
@@ -349,7 +361,7 @@
                             } 
                           ?>
                           </tbody>
-        
+                          <!-- Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp; <?php echo "$total"; ?> -->
                         </table>
                     
                       </div>
@@ -383,10 +395,10 @@
                             <table id="" class="table table-bordered table-hover">
                               <thead>
                               <tr>
-                                <th class=" " width="10"  >No</th>
-                                <th   class="">Jawaban</th>
-                                <th  class="">Kunci Jawaban</th>
-                                <th  class="text-center " >Keterangan</th>                              
+                                <th class="" width="10"  >No</th>
+                                <th class="">Jawaban</th>
+                                <th class="">Kunci Jawaban</th>
+                                <th class="text-center " >Keterangan</th>                              
                               </tr>
                               </thead>
                               <tbody>
@@ -408,6 +420,8 @@
                                   if ($jawaban == $kunci_jawaban ) {
                                       $ket = ' <font color="green" &nbsp;<i class="fa fa-lg  fa-check"></i></font>';
 
+                                      // $total += count($ket);
+
                                   }
                                   else {
                                         $ket = '<font color="red" &nbsp;<i class="fa fa-lg  fa-close"></i></font>';
@@ -424,7 +438,7 @@
                                 } 
                               ?>
                               </tbody>
-            
+                              <!-- Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp; <?php echo "$total"; ?> -->
                             </table>
                         
                           </div>

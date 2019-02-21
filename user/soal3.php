@@ -24,7 +24,7 @@ else{
         $telah_berlalu      = 0;
     } 
  
-    $temp_waktu = (0.5*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
+    $temp_waktu = (9*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
     $temp_menit = (int)($temp_waktu/60);                //dijadikan menit lagi
     $temp_detik = $temp_waktu%60;                       //sisa bagi untuk detik
      
@@ -108,20 +108,32 @@ else{
                       <div class="col-md-2 text-center"><button type="button" class="btn btn-success"><?php echo $deret_6; ?></button></div>
                     </div>
                   </div>
+
+                  
+
                   <div class="col-md-5">
+                  <?php
+                    $index = array("1");
+
+                    foreach ($index as $value) {
+                       
+                    
+                    ?>
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <input type="text" name="jawaban1[<?php echo $id;?>]" value="" class="form-control"  placeholder="" autocomplete="off" onkeypress='validate(event)'>
+                          <input type="text" name="jawaban1[<?php echo $id;?>]" value="" class="form-control"  placeholder="" autocomplete="off" onkeypress='validate(event)' tabindex="<?= $value ?>">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <input type="text" name="jawaban2[<?php echo $id;?>]" value="" class="form-control"  placeholder="" autocomplete="off" onkeypress='validate(event)'>
+                          <input type="text" name="jawaban2[<?php echo $id;?>]" value="" class="form-control"  placeholder="" autocomplete="off" onkeypress='validate(event)' tabindex="<?= $value ?>">
                         </div>
                       </div>
                     </div>
+                  <?php  } ?>
                   </div>
+               
 
                   <!-- row -->
                 </div>
@@ -994,7 +1006,7 @@ else{
                             clearInterval(hitung); 
                             /** Variable yang digunakan untuk submit secara otomatis di Form */
                             var frmSoal = document.getElementById("frmSoal"); 
-                            alert('Maaf, Waktu pengerjaan untuk soal tes ke-3 ini telah habis, lanjut ke tes berikutnya.');
+                            // alert('Maaf, Waktu pengerjaan untuk soal tes ke-3 ini telah habis, lanjut ke tes berikutnya.');
                             frmSoal.submit(); 
                         } 
                       } 

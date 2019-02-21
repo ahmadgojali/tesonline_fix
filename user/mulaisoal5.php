@@ -30,7 +30,7 @@ include '../config/koneksi.php';
 
     if (isset($_POST['latihan'])) {
 
-      $jwb_benar = "A";
+      $jwb_benar = "B";
 
       $jawaban = "";
           
@@ -65,7 +65,7 @@ include '../config/koneksi.php';
        Petunjuk Pengerjaan Tes 5
       </div>
       <div class="card-body lead">
-         <p class="lead">The last test is English. There are two types of question.<br> The first one is multiple choices. <br> You just have to fill the blank with the right answer. <br> The second one is a passage. You have to read the passage before you can answer the question. </br> Working time is <b>5 minutes</b> <br> Good luck!</p>
+         <p class="lead">The last test is English. There are two types of question.<br> The first one is multiple choices. <br> You just have to fill the blank with the right answer. <br> The second one is passage. You have to read the passage before you can answer the question. </br>  You have <b>5 minutes</b> to finish this test .<br> Good luck!</p>
       </div>
       <div class="card-footer text-muted">
        <!--  <?= @$tombol; ?> -->

@@ -23,9 +23,9 @@ else{
         $_SESSION["mulai1"]  = time();
         $telah_berlalu      = 0;
     } 
-    
+
     //ubah waktu disini
-    $temp_waktu = (0.5*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
+    $temp_waktu = (15*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
     $temp_menit = (int)($temp_waktu/60);                //dijadikan menit lagi
     $temp_detik = $temp_waktu%60;                       //sisa bagi untuk detik
      
@@ -119,8 +119,13 @@ else{
               $nomor = 1;
               $num_rows = mysqli_num_rows($hasil);
               while($row = mysqli_fetch_array($hasil)){
-              $id      = $row["id"];
-              $soal    = $row["soal"];
+              $id          = $row["id"];
+              $soal        = $row["soal"];
+              $pilihan_a   = $row["pilihan_a"];
+              $pilihan_b   = $row["pilihan_b"];
+              $pilihan_c   = $row["pilihan_c"];
+              $pilihan_d   = $row["pilihan_d"]; 
+              $gambar_soal = $row["gambar_soal"]; 
               // $jawaban = $row["jawaban"];
             ?>
     
@@ -132,19 +137,38 @@ else{
                         <input type="hidden" name="id[]" value="<?php echo $id; ?>">
                         <h1 class="lead pl-4"><?php echo $nomor; ?>. </h1>
                       </td>
-                      <td>
-                        <h1 class="lead pl-3 pr-3"><?php echo $soal; ?></h1>
-                      </td>
+                     
+                      <?php if (empty($gambar_soal)) {
+                            echo '<td>
+                                    <h1 class="lead pl-3 pr-3">'.$soal; '</h1>
+                                  </td>'; 
+                          } else {
+                            echo '
+                              <div class="mg-responsive ml-md-5">
+                                <img src="assets/img-soal/'.$gambar_soal.'" width="150px">
+                              </div>
+                              <div class="mg-responsive ml-md-5">
+                                <img src="assets/img-soal/1.a.png" width="100px">
+                                <img src="assets/img-soal/1.b.png" width="100px">
+                                <img src="assets/img-soal/1.c.png" width="100px">
+                                <img src="assets/img-soal/1.d.png" width="100px">
+                                <img src="assets/img-soal/1.e.png" width="100px">
+                              </div>
+                              ';
+                          }
+                          ?>
                     </tr>
                   </table>
-                  <tr>
-                    <div class="form-group pl-md-5 pr-3">
-                      <!-- <label for="exampleInputEmail1">Email address</label> -->
-                      <input type="text" name="jawaban[<?php echo $id;?>]" value="" class="form-control"  placeholder="Jawab disini" autocomplete="off" onkeypress='validate(event)'>
-                    </div>
-                  </tr>
+
+                    <tr>
+                      <div class="form-group pl-md-5 pr-3">
+                        <!-- <label for="exampleInputEmail1">Email address</label> -->
+                        <input type="text" name="jawaban[<?php echo $id;?>]" value="" class="form-control" id="dengan-rupiah" placeholder="Jawab disini" autocomplete="off" onkeypress="validate(event)">
+                        
+                      </div>
+                    </tr>
+                  </div>
                 </div>
-              </div>
                <?php
                $nomor++;
                }
@@ -181,7 +205,7 @@ else{
         var key = theEvent.keyCode || theEvent.which;
         key = String.fromCharCode(key);
     }
-    var regex = /[0-9+-/*]|\./;
+    var regex = /[0-9+-/*ABCDE]|\./;
     if( !regex.test(key) ) {
       theEvent.returnValue = false;
       if(theEvent.preventDefault) theEvent.preventDefault();
@@ -266,7 +290,7 @@ else{
                             clearInterval(hitung); 
                             /** Variable yang digunakan untuk submit secara otomatis di Form */
                             var frmSoal = document.getElementById("frmSoal"); 
-                           alert('Maaf, Waktu pengerjaan untuk soal tes ke-1 ini telah habis, lanjut ke tes berikutnya.');
+                           // alert('Maaf, Waktu pengerjaan untuk soal tes ke-1 ini telah habis, lanjut ke tes berikutnya.');
                             frmSoal.submit(); 
                         } 
                     } 

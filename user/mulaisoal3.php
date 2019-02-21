@@ -73,7 +73,7 @@ include '../config/koneksi.php';
        Petunjuk Pengerjaan Tes 3
       </div>
       <div class="card-body">
-         <p class="lead">Test ketiga adalah soal deret angka. <br> Tugas Anda adalah meneruskan deret angka yang ada. <br> Caranya Anda harus menemukan dulu pola yang terbentuk dari angka - angka sebelumnya. <br> Waktu pengerjaan <b>9 menit</b>
+         <p class="lead">Test ketiga adalah soal deret angka. <br> Tugas Anda adalah meneruskan deret angka yang ada. <br> Caranya Anda harus menemukan dulu pola yang terbentuk dari angka - angka sebelumnya.<br> Anda tidak diperkenankan untuk mengunakan alat bantu hitung digital seperti kalkulator, Hp dll. <br> Waktu pengerjaan <b>9 menit</b><br> Kerjakan secepat dan semaksimal mungkin sebelum waktunya selesai.</p>
       </div>
       <div class="card-footer text-muted">
        <?= @$tombol; ?>

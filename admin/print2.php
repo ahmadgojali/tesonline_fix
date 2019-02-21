@@ -161,7 +161,7 @@
                           </tr>
                           </thead>
                           <tbody>
-                            <!-- tabel cocokin jawaban -->
+                          <!-- tabel cocokin jawaban -->
                           <?php 
                           $query3 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM `jawaban_tes1`, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user";
 

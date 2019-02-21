@@ -79,7 +79,7 @@ include '../config/koneksi.php';
        Petunjuk Pengerjaan Tes 2
       </div>
       <div class="card-body">
-       <p class="lead">Test berikut adalah soal hubungan kata. <br> Tugas anda adalah mencari kata keempat yang hilang. <br> Caranya Anda harus menemukan dulu hubungan kata pertama dan kata kedua. <br> Waktu pengerjaan <b>6 menit</b>
+       <p class="lead">Test berikut adalah soal hubungan kata. <br> Tugas anda adalah mencari kata keempat yang hilang. <br> Caranya Anda harus menemukan dulu hubungan kata pertama dan kata kedua. <br> Waktu pengerjaan <b>6 menit</b><br> Kerjakan secepat dan semaksimal mungkin sebelum waktunya selesai.</p>
       </div>
       <div class="card-footer text-muted">
        <!-- <?= @$tombol; ?> -->

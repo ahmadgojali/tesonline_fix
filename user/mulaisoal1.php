@@ -70,7 +70,7 @@ include '../config/koneksi.php';
        Petunjuk Pengerjaan Tes 1
       </div>
       <div class="card-body">
-        <p class="lead">Test berikut adalah test hitungan. <br> Tugas Anda mudah Anda hanya tinggal mengerjakan soal hitungan tersebut. <br> Anda tidak diperkenankan untuk mengunakan alat bantu hitung digital seperti kalkulator, Hp dll. <br> Waktu pengerjaan <b>15 menit</b> <br> Kerjakan secepat mungkin sebelum waktunya selesai.</p>
+        <p class="lead">Test berikut adalah test hitungan. <br> Tugas Anda mudah Anda hanya tinggal mengerjakan soal hitungan tersebut. <br> Anda tidak diperkenankan untuk mengunakan alat bantu hitung digital seperti kalkulator, Hp dll. <br> Waktu pengerjaan <b>15 menit</b> <br> Kerjakan secepat dan semaksimal mungkin sebelum waktunya selesai.</p>
       </div>
       <div class="card-footer text-muted">
         <!-- Large modal -->
@@ -129,7 +129,7 @@ include '../config/koneksi.php';
                   </table>
                   <tr>
                     <div class="form-group pl-md-5 pr-3">
-                      <input type="text" onkeypress='validate(event)' name="jawaban" value="" class="form-control"  placeholder="Jawab disini" autocomplete="off" >
+                      <input type="text" name="jawaban" value="" class="form-control"  placeholder="Jawab disini" autocomplete="off" id="dengan-rupiah">
                       <!-- onkeypress='validate(event)' -->
                     </div>
                   </tr>

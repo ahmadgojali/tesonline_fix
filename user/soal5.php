@@ -24,7 +24,7 @@ else{
         $telah_berlalu      = 0;
     } 
  
-    $temp_waktu = (0.5*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
+    $temp_waktu = (5*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
     $temp_menit = (int)($temp_waktu/60);                //dijadikan menit lagi
     $temp_detik = $temp_waktu%60;                       //sisa bagi untuk detik
      
@@ -258,7 +258,7 @@ else{
                             clearInterval(hitung); 
                             /** Variable yang digunakan untuk submit secara otomatis di Form */
                             var frmSoal = document.getElementById("frmSoal"); 
-                            alert('Maaf, Waktu pengerjaan untuk soal tes ke-5 ini telah habis, terimakasih sudah meluangkan waktu untuk menyelesaikan tes ini, semoga hasilnya memuaskan.');
+                            // alert('Maaf, Waktu pengerjaan untuk soal tes ke-5 ini telah habis, terimakasih sudah meluangkan waktu untuk menyelesaikan tes ini, semoga hasilnya memuaskan.');
                             frmSoal.submit(); 
                         } 
                       } 
