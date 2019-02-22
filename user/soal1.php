@@ -25,7 +25,8 @@ else{
     } 
 
     //ubah waktu disini
-    $temp_waktu = (15*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
+    $temp_waktu = (0.5*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
+    // $temp_waktu = (15*60) - $telah_berlalu; //dijadikan detik dan dikurangi waktu yang berlalu
     $temp_menit = (int)($temp_waktu/60);                //dijadikan menit lagi
     $temp_detik = $temp_waktu%60;                       //sisa bagi untuk detik
      
@@ -161,7 +162,7 @@ else{
                   </table>
 
                     <tr>
-                      <div class="form-group pl-md-5 pr-3">
+                      <div class="form-group ml-md-2 pl-md-5 pr-3 col-md-4">
                         <!-- <label for="exampleInputEmail1">Email address</label> -->
                         <input type="text" name="jawaban[<?php echo $id;?>]" value="" class="form-control" id="dengan-rupiah" placeholder="Jawab disini" autocomplete="off" onkeypress="validate(event)">
                         
@@ -191,6 +192,13 @@ else{
   </div>
 
 <?php include 'templates/footer.php'; ?>
+
+<!-- mematikan tombol back pada browser -->
+<script type = "text/javascript" >
+  function preventBack(){window.history.forward();}
+  setTimeout("preventBack()", 0);
+  window.onunload=function(){null};
+</script>
 
 <!-- fungsi validasi angka dan operator mtk -->
 <script>

@@ -46,16 +46,15 @@ include '../config/koneksi.php';
 
 
       if ($jawaban == $jwb_benar) {
-        // $alert = '<div class="alert alert-success" role="alert">
-        //             <center>Jawaban anda benar, karena 1 + 1 adalah 2 , anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah .</center>
-        //           </div>';
-        //  $tombol = '<a href="soal1.php" class="btn btn-success">Mulai</a>';
-        echo "<script language='javascript'> window.location = 'soal1.php';</script>"; 
+        $alert = '<div class="alert alert-success" role="alert">
+                    <center>Jawaban anda benar, karena 1 + 1 adalah 2 , anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah .</center>
+                  </div>';
+         $tombol = '<a href="soal1.php" class="btn btn-success">Mulai</a>';
+        // echo "<script language='javascript'> window.location = 'soal1.php';</script>"; 
         
       } else {
         $alert = '<div class="alert alert-danger" role="alert">
-                    <center>Jawaban anda salah, karena 1 + 1 bukan '.$jawaban.
-                  ' , coba lagi !</center></div>';
+                    <center>Jawaban anda salah, coba lagi !</center></div>';
       }
       
 
@@ -74,7 +73,7 @@ include '../config/koneksi.php';
       </div>
       <div class="card-footer text-muted">
         <!-- Large modal -->
-        <!-- <?= @$tombol; ?> -->
+        <?= @$tombol; ?>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Latihan</button>
 
        <!-- <a href="soal1.php" class="btn btn-primary">Mulai</a> -->

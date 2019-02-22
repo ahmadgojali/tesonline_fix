@@ -81,15 +81,14 @@
                         <thead>
                         <tr>
                           <th class="" width="10"  >No</th>
-                          <th   class="">Jawaban</th>
-                          <th  class="">Kunci Jawaban</th>
-                          <th  class="text-center " >Keterangan</th>                              
+                          <th class="">Jawaban</th>
+                          <th class="">Kunci Jawaban</th>
+                          <th class="text-center" >Keterangan</th>                              
                         </tr>
                         </thead>
                         <tbody>
                         <!-- tabel cocokin jawaban -->
                         <?php 
-                        // $query3 = "select id,kunci_jawaban from soal1";
                         
                         $query3 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM jawaban_tes1, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user order by soal1.id ASC";
 
@@ -97,10 +96,17 @@
                         $nomor = 1;
 
                         while($row = mysqli_fetch_array($hasil3)){
-                        // echo jawaban1($row[id],$id_user);
+                        // echo jawaban1($row[id],$id_user);                          
                         $jawaban       = $row['jawaban'];
                         $kunci_jawaban = $row['kunci_jawaban'];
                         // $total = 0;
+
+
+                        // $id_soal = $row['id'];
+                        // $query4 = "SELECT * from soal1 where id='$id_soal' and (kunci_jawaban = '$jawaban' or kunci_jawaban2 = '$jawaban')";                        
+                        
+                        // echo $query4."<br>";
+                        
 
                           if ($jawaban == $kunci_jawaban ) {
                               $ket = ' <font color="green" &nbsp;<i class="fa fa-lg  fa-check"></i></font>';
@@ -238,7 +244,7 @@
                           <table id="" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                              <th class="" width="10"  >No</th>
+                              <th class="" width="10">No</th>
                               <th class="">Jawaban</th>
                               <th class="">Kunci Jawaban</th>
                               <th class="text-center " >Keterangan</th>                              
@@ -319,7 +325,7 @@
                         <table id="" class="table table-bordered table-hover">
                           <thead>
                           <tr>
-                            <th class="" width="10"  >No</th>
+                            <th class="" width="10">No</th>
                             <th class="">Jawaban</th>
                             <th class="">Kunci Jawaban</th>
                             <th class="text-center " >Keterangan</th>                              
@@ -395,7 +401,7 @@
                             <table id="" class="table table-bordered table-hover">
                               <thead>
                               <tr>
-                                <th class="" width="10"  >No</th>
+                                <th class="" width="10">No</th>
                                 <th class="">Jawaban</th>
                                 <th class="">Kunci Jawaban</th>
                                 <th class="text-center " >Keterangan</th>                              

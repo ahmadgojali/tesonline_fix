@@ -45,12 +45,12 @@ include '../config/koneksi.php';
 
 
       if ($jawaban1 == $jwb_benar1 && $jawaban2 == $jwb_benar2) {
-        // $alert = '<div class="alert alert-success" role="alert">
-        //             <center>Jawaban anda benar, karena 7 dan 8 adalah lanjutan dari angka sebelumnya , anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah .</center>
-        //           </div>';
-        //  $tombol = '<a href="soal3.php" class="btn btn-success">Mulai</a>';
+        $alert = '<div class="alert alert-success" role="alert">
+                    <center>Jawaban anda benar, karena 7 dan 8 adalah lanjutan dari angka sebelumnya , anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah .</center>
+                  </div>';
+         $tombol = '<a href="soal3.php" class="btn btn-success">Mulai</a>';
 
-        echo "<script language='javascript'> window.location = 'soal3.php';</script>";
+        // echo "<script language='javascript'> window.location = 'soal3.php';</script>";
 
       } else {
         $alert = '<div class="alert alert-danger" role="alert">

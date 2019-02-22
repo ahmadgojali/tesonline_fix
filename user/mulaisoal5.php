@@ -37,12 +37,12 @@ include '../config/koneksi.php';
       @$jawaban = $_POST['jawaban']; 
 
        if ($jawaban == $jwb_benar) {
-        // $alert = '<div class="alert alert-success" role="alert">
-        //             <center>Jawaban anda benar, karena Darimana asal kamu? = Where are you from?, anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah .</center>
-        //           </div>';
-        //  $tombol = '<a href="soal5.php" class="btn btn-success">Mulai</a>';
+        $alert = '<div class="alert alert-success" role="alert">
+                    <center>Jawaban anda benar, anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah .</center>
+                  </div>';
+         $tombol = '<a href="soal5.php" class="btn btn-success">Mulai</a>';
 
-        echo "<script language='javascript'> window.location = 'soal5.php';</script>";
+        // echo "<script language='javascript'> window.location = 'soal5.php';</script>";
 
       } else {
         $alert = '<div class="alert alert-danger" role="alert">
@@ -68,7 +68,7 @@ include '../config/koneksi.php';
          <p class="lead">The last test is English. There are two types of question.<br> The first one is multiple choices. <br> You just have to fill the blank with the right answer. <br> The second one is passage. You have to read the passage before you can answer the question. </br>  You have <b>5 minutes</b> to finish this test .<br> Good luck!</p>
       </div>
       <div class="card-footer text-muted">
-       <!--  <?= @$tombol; ?> -->
+        <?= @$tombol; ?>
        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Latihan</button>
       </div>
     </div>

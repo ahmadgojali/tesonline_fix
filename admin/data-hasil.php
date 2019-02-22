@@ -50,11 +50,11 @@
                       <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                          <th   >No</th>
-                          <th   >Nama</th>
-                          <th   >Umur</th>
-                          <th   >Email</th>                              
-                          <th >Tanggal Tes</th>   
+                          <th>No</th>
+                          <th>Nama</th>
+                          <th>Umur</th>
+                          <th>Email</th>                              
+                          <th>Tanggal Tes</th>   
                          
                           <th class="align-middle text-center" width="20%" >Opsi</th>
                           

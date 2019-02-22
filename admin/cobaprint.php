@@ -7,7 +7,7 @@
 	<!-- FontAwesome-->
   <link rel="stylesheet" href="../assets2/bootstrap/font-awesome/4.5.0/css/font-awesome.min.css" />
 </head>
-<body>
+<!-- <body> -->
 
 <?php
 
@@ -21,7 +21,7 @@ $hasil = mysqli_query($connect, $query);
 $data  = mysqli_fetch_array($hasil);     
 
 ?> 
-<!-- <body onload="window.print();"> -->
+<body onload="window.print();">
 	<div class="container">
 	  <div class="row">
 	  	 <!-- hitung jumlah jawaban benar -->
