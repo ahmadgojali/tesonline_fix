@@ -15,8 +15,8 @@
 	}
 	return $rows;
 
-	$user = tampil("SELECT * from user");
-var_dump($rows);
+// 	$user = tampil("SELECT * from user");
+// var_dump($rows);
  }
 
  

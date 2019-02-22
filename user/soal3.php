@@ -145,11 +145,10 @@ else{
              $nomor++;
              }
              ?> 
-            <!-- button simpan -->
-          <!--   <div class="float-right mr-md-5 mb-3">
-              <input type="submit" name="submit" id="submit" class="btn btn-success" value="Simpan">
+            
+            <!-- <div class="float-right mr-md-5 mb-3">
+               <input type="submit" name="simpan" id="simpan" class="btn btn-success" value="Next">
             </div> -->
-            <!-- form -->
           </form> 
         </div>   
       </div>

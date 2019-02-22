@@ -180,10 +180,10 @@ else{
                <?php var_dump($pilihan_c) ?>
                <?php var_dump($pilihan_d) ?> -->
 
-           <!--  <input type="hidden" id="jmrows" value="<?=$num_rows?>">             
+            <!-- <input type="hidden" id="jmrows" value="<?=$num_rows?>">              -->
             <div class="float-right mr-md-5 mb-3">
-               <input type="submit" name="submit" id="submit" class="btn btn-success" value="Simpan">
-            </div> -->
+               <input type="submit" name="simpan" id="simpan" class="btn btn-success" value="Next">
+            </div>
           </form>   
         </div>
       </div>

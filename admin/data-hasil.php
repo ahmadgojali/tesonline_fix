@@ -66,7 +66,7 @@
                       
                         // $query = "SELECT user.*, jawaban_tes1.*, soal1.* from user, jawaban_tes1, soal1 where user.id = jawaban_tes1.id_user and soal1.id = jawaban_tes1.id_soal group by jawaban_tes1.id_user";
 
-                        $query = "SELECT user.*, jawaban_tes1.*, soal1.* FROM jawaban_tes1, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id group by jawaban_tes1.id_user";
+                        $query = "SELECT user.*, jawaban_tes1.*, soal1.* FROM jawaban_tes1, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id group by jawaban_tes1.id_user order by user.tanggal_tes DESC";
 
                         $hasil = mysqli_query($connect, $query);
                         $nomor = 1;
