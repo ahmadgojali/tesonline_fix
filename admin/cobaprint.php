@@ -49,7 +49,7 @@ $data  = mysqli_fetch_array($hasil);
 			  <tbody>
 			  	 <!-- tabel cocokin jawaban -->
 	              <?php 
-	              $query3 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM `jawaban_tes1`, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user";
+	              $query3 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM `jawaban_tes1`, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user order by soal1.id ASC";
 
 	              $hasil3  = mysqli_query($connect, $query3);
 
@@ -107,7 +107,7 @@ $data  = mysqli_fetch_array($hasil);
 		  <tbody>
 		  	<!-- tabel cocokin jawaban -->
               <?php 
-                $query3 = "SELECT user.*, jawaban_tes2.*, soal2.* FROM jawaban_tes2, user, soal2 where jawaban_tes2.id_user = user.id and jawaban_tes2.id_soal = soal2.id and jawaban_tes2.id_user = $id_user";
+                $query3 = "SELECT user.*, jawaban_tes2.*, soal2.* FROM jawaban_tes2, user, soal2 where jawaban_tes2.id_user = user.id and jawaban_tes2.id_soal = soal2.id and jawaban_tes2.id_user = $id_user order by soal2.id ASC";
               
                 $hasil3  = mysqli_query($connect, $query3);
 
@@ -172,7 +172,7 @@ $data  = mysqli_fetch_array($hasil);
 			  <tbody>
 			  <!-- tabel cocokin jawaban -->
               <?php 
-              $query3 = "SELECT user.*, jawaban_tes3.*, soal3.* FROM jawaban_tes3, user, soal3 where jawaban_tes3.id_user = user.id and jawaban_tes3.id_soal = soal3.id and jawaban_tes3.id_user = $id_user";
+              $query3 = "SELECT user.*, jawaban_tes3.*, soal3.* FROM jawaban_tes3, user, soal3 where jawaban_tes3.id_user = user.id and jawaban_tes3.id_soal = soal3.id and jawaban_tes3.id_user = $id_user order by soal3.id ASC";
 
               $hasil3  = mysqli_query($connect, $query3);
 
@@ -234,7 +234,7 @@ $data  = mysqli_fetch_array($hasil);
 			  <tbody>
 			  	 <!-- tabel cocokin jawaban -->
 	              <?php 
-	              $query3 = "SELECT user.*, jawaban_tes4.*, soal4.* FROM `jawaban_tes4`, user, soal4 where jawaban_tes4.id_user = user.id and jawaban_tes4.id_soal = soal4.id and jawaban_tes4.id_user = $id_user";
+	              $query3 = "SELECT user.*, jawaban_tes4.*, soal4.* FROM `jawaban_tes4`, user, soal4 where jawaban_tes4.id_user = user.id and jawaban_tes4.id_soal = soal4.id and jawaban_tes4.id_user = $id_user order by soal4.id ASC";
 
 	              $hasil3  = mysqli_query($connect, $query3);
 
@@ -269,7 +269,7 @@ $data  = mysqli_fetch_array($hasil);
 
 	    <!-- <div class="row"> -->
 
-		<?php 
+	<?php 
                         
       $query2 = "SELECT user.*, jawaban_tes5.*, soal5.* FROM jawaban_tes5, user, soal5 where jawaban_tes5.id_user = user.id and jawaban_tes5.id_soal = soal5.id and jawaban_tes5.id_user = $id_user and jawaban_tes5.jawaban = soal5.kunci_jawaban";
 
@@ -293,7 +293,7 @@ $data  = mysqli_fetch_array($hasil);
 			  <tbody>
 			  	  <!-- tabel cocokin jawaban -->
               <?php 
-              $query3 = "SELECT user.*, jawaban_tes5.*, soal5.* FROM jawaban_tes5, user, soal5 where jawaban_tes5.id_user = user.id and jawaban_tes5.id_soal = soal5.id and jawaban_tes5.id_user = $id_user";
+              $query3 = "SELECT user.*, jawaban_tes5.*, soal5.* FROM jawaban_tes5, user, soal5 where jawaban_tes5.id_user = user.id and jawaban_tes5.id_soal = soal5.id and jawaban_tes5.id_user = $id_user order by soal5.id ASC";
 
               $hasil3  = mysqli_query($connect, $query3);
 

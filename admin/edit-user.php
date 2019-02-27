@@ -66,7 +66,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-lock"></i>
                       </div>
-                      <input type="text" class="form-control" id="password" name="password" value="<?php echo $row['password']; ?>" readonly>
+                      <input type="text" class="form-control" id="" name="password" value="<?php echo $row['password']; ?>" readonly>
                       <!-- <input type="password" class="form-control" id="password" name="password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,12}$" title="alfanumerik 6 hingga 12 karakter tidak boleh ada spasi" placeholder="Password" value="<?php echo $row['password']; ?>" required> -->
                     </div>
                     </div>

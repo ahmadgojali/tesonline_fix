@@ -23,7 +23,7 @@ include '../config/koneksi.php';
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Terimakasih ..</h1>
-  <!-- <p class="lead">Terimakasih kepada bapak/ibu sudah meluangkan waktu untuk menyelesaikan tes ini, semoga hasilnya memuaskan. </p> -->
+  <p class="lead">Terimakasih kepada bapak/ibu sudah meluangkan waktu untuk menyelesaikan tes ini, kami berharap bapak/ibu dapat meraih hasil yang terbaik. </p>
 </div>
 
 <br>

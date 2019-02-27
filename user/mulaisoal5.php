@@ -38,7 +38,7 @@ include '../config/koneksi.php';
 
        if ($jawaban == $jwb_benar) {
         $alert = '<div class="alert alert-success" role="alert">
-                    <center>Jawaban anda benar, anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah .</center>
+                    <center>Jawaban anda benar, anda bisa lanjut dan langsung mengerjakan soal dengan menekan tombol mulai dibawah.</center>
                   </div>';
          $tombol = '<a href="soal5.php" class="btn btn-success">Mulai</a>';
 
