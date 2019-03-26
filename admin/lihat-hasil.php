@@ -17,6 +17,75 @@
     $data  = mysqli_fetch_array($hasil);     
 
   ?>
+
+<?php 
+                  
+  function jml_benar($no) {
+    global $connect;
+    $id_user   = $_GET['id_user'];
+
+    if ($no == 1) {
+       $query2 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM jawaban_tes1, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user and jawaban_tes1.jawaban = soal1.kunci_jawaban";
+
+      $hasil2  = mysqli_query($connect, $query2);
+
+      $jml_benar = mysqli_num_rows($hasil2);
+     
+    }
+    elseif ($no == 3) {
+        $query2 = "SELECT user.*, jawaban_tes3.*, soal3.* FROM jawaban_tes3, user, soal3 where jawaban_tes3.id_user = user.id and jawaban_tes3.id_soal = soal3.id and jawaban_tes3.id_user = $id_user and jawaban_tes3.jawaban1 = soal3.kunci_jawaban1 and jawaban_tes3.jawaban2 = soal3.kunci_jawaban2";
+
+        $hasil2  = mysqli_query($connect, $query2);
+
+        $jml_benar = mysqli_num_rows($hasil2);
+     }
+
+     elseif ($no == 5) {
+        $query2 = "SELECT user.*, jawaban_tes5.*, soal5.* FROM jawaban_tes5, user, soal5 where jawaban_tes5.id_user = user.id and jawaban_tes5.id_soal = soal5.id and jawaban_tes5.id_user = $id_user and jawaban_tes5.jawaban = soal5.kunci_jawaban";
+
+        $hasil2  = mysqli_query($connect, $query2);
+
+        $jml_benar = mysqli_num_rows($hasil2);
+      }
+
+      elseif ($no == 2) {
+        $query2 = "SELECT user.*, jawaban_tes2.*, soal2.* FROM jawaban_tes2, user, soal2 where jawaban_tes2.id_user = user.id and jawaban_tes2.id_soal = soal2.id and jawaban_tes2.id_user = $id_user and jawaban_tes2.jawaban = soal2.kunci_jawaban";
+
+        $hasil2  = mysqli_query($connect, $query2);
+
+        $jml_benar = mysqli_num_rows($hasil2);
+       }
+
+       elseif ($no == 4) {
+          $query2 = "SELECT user.*, jawaban_tes4.*, soal4.* FROM jawaban_tes4, user, soal4 where jawaban_tes4.id_user = user.id and jawaban_tes4.id_soal = soal4.id and jawaban_tes4.id_user = $id_user and jawaban_tes4.jawaban = soal4.kunci_jawaban";
+
+          $hasil2  = mysqli_query($connect, $query2);
+
+          $jml_benar = mysqli_num_rows($hasil2);
+        }
+      else {
+
+        $jml_benar = 0;
+      } 
+
+     return $jml_benar;
+   
+  }
+
+  function query($query) {
+    global $connect;
+    $result = mysqli_query($connect, $query);
+    // $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+      $rows[] = $row;
+    }
+    return $rows;
+
+  //  $user = tampil("SELECT * from user");
+  // var_dump($rows);
+ }
+
+?>
    <!-- Main content -->
     <section class="content">
 
@@ -54,15 +123,7 @@
                    <!-- <section class="col-lg-7 connectedSortable"> -->
 
                   <!-- hitung jumlah jawaban benar -->
-                  <?php 
                   
-                    $query2 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM `jawaban_tes1`, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $id_user and jawaban_tes1.jawaban = soal1.kunci_jawaban";
-
-                    $hasil2  = mysqli_query($connect, $query2);
-
-                    $jml_benar = mysqli_num_rows($hasil2);
-
-                 ?>
                   <!-- col-tabel-tes1 -->
                   <!-- <div class="col-md-6"> -->
                     <div class="text-center">Tabel Jawaban Tes 1</i></b><br>Matematika Dasar</div>
@@ -72,7 +133,8 @@
                         <tr>
                           <td>Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp; </td>
                           <td>:</td>
-                          <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= $jml_benar; ?></td>
+                          <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= jml_benar(1); ?></td>
+                          <!-- <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= $jml_benar; ?></td> -->
                         </tr>
                       </table>
                      </div>
@@ -111,7 +173,7 @@
                           if ($jawaban == $kunci_jawaban ) {
                               $ket = ' <font color="green" &nbsp;<i class="fa fa-lg  fa-check"></i></font>';
 
-                              $total += count($ket);
+                              // $total += count($ket);
                               // var_dump($total);
                               // echo "$total";
                           }
@@ -137,7 +199,7 @@
                     </div>
 
                      <!-- hitung jumlah jawaban benar -->
-                      <?php 
+                      <!-- <?php 
                       
                         $query2 = "SELECT user.*, jawaban_tes3.*, soal3.* FROM jawaban_tes3, user, soal3 where jawaban_tes3.id_user = user.id and jawaban_tes3.id_soal = soal3.id and jawaban_tes3.id_user = $id_user and jawaban_tes3.jawaban1 = soal3.kunci_jawaban1 and jawaban_tes3.jawaban2 = soal3.kunci_jawaban2";
 
@@ -145,7 +207,7 @@
 
                         $jml_benar = mysqli_num_rows($hasil2);
 
-                     ?>
+                     ?> -->
                       <!-- col-tabel-tes3 -->
                       <div class="box-body">
                         <div class="text-center">Tabel Jawaban Tes 3</i></b><br>Deret Angka</div>
@@ -155,7 +217,7 @@
                             <tr>
                               <td>Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp; </td>
                               <td>:</td>
-                              <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= $jml_benar; ?></td>
+                              <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= jml_benar(3); ?></td>
                             </tr>
                           </table>
                          </div>
@@ -218,7 +280,7 @@
                         <!-- col-tabel-tes3 -->
 
                          <!-- hitung jumlah jawaban benar -->
-                      <?php 
+                      <!-- <?php 
                       
                         $query2 = "SELECT user.*, jawaban_tes5.*, soal5.* FROM jawaban_tes5, user, soal5 where jawaban_tes5.id_user = user.id and jawaban_tes5.id_soal = soal5.id and jawaban_tes5.id_user = $id_user and jawaban_tes5.jawaban = soal5.kunci_jawaban";
 
@@ -226,7 +288,7 @@
 
                         $jml_benar = mysqli_num_rows($hasil2);
 
-                     ?>
+                     ?> -->
                       <!-- col-tabel-tes5 -->
                       <div class="box-body">
                         <div class="text-center">Tabel Jawaban Tes 5</i></b><br>Bahasa Inggris</div>
@@ -236,7 +298,7 @@
                             <tr>
                               <td>Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp; </td>
                               <td>:</td>
-                              <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= $jml_benar; ?></td>
+                              <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= jml_benar(5); ?></td>
                             </tr>
                           </table>
                          </div>
@@ -297,7 +359,7 @@
                 <!-- right col (We are only adding the ID to make the widgets sortable)-->
                 <section class="col-lg-6 connectedSortable">
                     <!-- hitung jumlah jawaban benar -->
-                      <?php 
+                      <!-- <?php 
                       
                         $query2 = "SELECT user.*, jawaban_tes2.*, soal2.* FROM jawaban_tes2, user, soal2 where jawaban_tes2.id_user = user.id and jawaban_tes2.id_soal = soal2.id and jawaban_tes2.id_user = $id_user and jawaban_tes2.jawaban = soal2.kunci_jawaban";
 
@@ -305,7 +367,7 @@
 
                         $jml_benar = mysqli_num_rows($hasil2);
 
-                     ?>
+                     ?> -->
                      <div class="box-body">
 
                       <!-- col-tabel-tes2 -->
@@ -317,7 +379,7 @@
                             <tr>
                               <td>Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp; </td>
                               <td>:</td>
-                              <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= $jml_benar; ?></td>
+                              <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= jml_benar(2); ?></td>
                             </tr>
                           </table>
                          </div>
@@ -374,7 +436,7 @@
                       <!-- col-tabel-tes2 -->
 
                        <!-- hitung jumlah jawaban benar -->
-                          <?php 
+                          <!-- <?php 
                           
                             $query2 = "SELECT user.*, jawaban_tes4.*, soal4.* FROM `jawaban_tes4`, user, soal4 where jawaban_tes4.id_user = user.id and jawaban_tes4.id_soal = soal4.id and jawaban_tes4.id_user = $id_user and jawaban_tes4.jawaban = soal4.kunci_jawaban";
 
@@ -382,7 +444,7 @@
 
                             $jml_benar = mysqli_num_rows($hasil2);
 
-                         ?>
+                         ?> -->
 
                           <!-- col-tabel-tes4 -->
                           <div class="box-body">
@@ -393,7 +455,7 @@
                                 <tr>
                                   <td>Jumlah Benar &nbsp;&nbsp;&nbsp;&nbsp; </td>
                                   <td>:</td>
-                                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= $jml_benar; ?></td>
+                                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <?= jml_benar(4); ?></td>
                                 </tr>
                               </table>
                              </div>

@@ -38,16 +38,24 @@
           </ul>
         </li> -->
          <li class="treeview">
-          <a href="data-user.php">
-            <i class="fa fa-reorder"></i> <span>Data Pelamar</span>
+          <a href="?pages=pelamar">
+            <i class="fa fa-user"></i> <span>Data Pelamar</span>
             <span class="pull-right-container">
               <!-- <i class="fa fa-angle-left pull-right"></i> -->
             </span>
           </a>
         </li>
         <li class="treeview">
-          <a href="data-hasil.php">
+          <a href="?pages=ujian">
             <i class="fa fa-reorder"></i> <span>Data Hasil Ujian</span>
+            <span class="pull-right-container">
+              <!-- <i class="fa fa-angle-left pull-right"></i> -->
+            </span>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="?pages=jobfair">
+            <i class="fa fa-folder"></i> <span>Peserta Jobfair</span>
             <span class="pull-right-container">
               <!-- <i class="fa fa-angle-left pull-right"></i> -->
             </span>

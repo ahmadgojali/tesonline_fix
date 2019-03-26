@@ -33,10 +33,10 @@ include '../config/koneksi.php';
 
         for ($i = 1; $i <= $jml_soal; $i++)  {
          
-         @$jawaban = $pilihan[$i];
+         @$jawaban = strtoupper($pilihan[$i]);
 
         
-          $query   = ("INSERT INTO jawaban_tes1 (id_user, id_soal, jawaban) VALUES ($session, $i, '$jawaban')");
+          $query   = ("INSERT INTO jawaban_tes1 (id_user, id_soal, jawaban) VALUES ('$session', '$i', '$jawaban')");
 
           $hasil = mysqli_query($connect, $query);
 
@@ -44,13 +44,13 @@ include '../config/koneksi.php';
 
         // masukkan jumlah benar ke tabel nilai
         if ($hasil) {
-           $query2 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM `jawaban_tes1`, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $session and jawaban_tes1.jawaban = soal1.kunci_jawaban";
+           $query2 = "SELECT user.*, jawaban_tes1.*, soal1.* FROM jawaban_tes1, user, soal1 where jawaban_tes1.id_user = user.id and jawaban_tes1.id_soal = soal1.id and jawaban_tes1.id_user = $session and jawaban_tes1.jawaban = soal1.kunci_jawaban";
 
             $hasil2    = mysqli_query($connect, $query2);
             // $data2     = mysqli_fetch_array($hasil);
             $jml_benar = mysqli_num_rows($hasil2);
 
-            $insertnilai  = ("INSERT INTO nilai (id_user, tes1) VALUES ($session, '$jml_benar')");
+            $insertnilai  = ("INSERT INTO nilai (id_user, tes1) VALUES ('$session', '$jml_benar')");
             $hasilinsert    = mysqli_query($connect, $insertnilai);
           }
 

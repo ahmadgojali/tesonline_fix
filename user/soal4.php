@@ -77,7 +77,7 @@ else{
                
               include '../config/koneksi.php';                    
             
-              $query = "SELECT * FROM soal4 order by id ASC";
+              $query = "SELECT * FROM soal4 order by rand()";
               $hasil = mysqli_query($connect, $query);
               $nomor = 1;
               while($row = mysqli_fetch_array($hasil)){

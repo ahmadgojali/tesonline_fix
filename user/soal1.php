@@ -115,7 +115,7 @@ else{
             
             <?php
              
-              $query = "SELECT * FROM soal1 order by id ASC";
+              $query = "SELECT * FROM soal1 order by rand()";
               $hasil = mysqli_query($connect, $query);
               $nomor = 1;
               $num_rows = mysqli_num_rows($hasil);
@@ -213,7 +213,7 @@ else{
         var key = theEvent.keyCode || theEvent.which;
         key = String.fromCharCode(key);
     }
-    var regex = /[0-9+-/*ABCDE]|\./;
+    var regex = /[0-9+-/*ABCDEabcde]|\./;
     if( !regex.test(key) ) {
       theEvent.returnValue = false;
       if(theEvent.preventDefault) theEvent.preventDefault();

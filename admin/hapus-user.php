@@ -12,11 +12,11 @@
 
             if($sql2){
 
-                header('location:data-user.php');
+                header('location:index.php?pages=pelamar');
             }
 
             else {
 
-                echo "<script language='javascript'>window.alert('Maaf, Data gagal dihapus '), window.location = 'data-user.php';</script>";
+                echo "<script language='javascript'>window.alert('Maaf, Data gagal dihapus '), window.location = 'index.php?pages=pelamar';</script>";
             }
 ?>

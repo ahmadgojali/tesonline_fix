@@ -5,7 +5,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2019 <a href="https://www.arwanacitra.com/" target="_blank">Arwana Citramulia</a>.</strong> All rights
+    <strong>Copyright &copy; 2019 <a href="https://www.arwanacitra.com/" target="_blank">PT. Arwana Citramulia Tbk</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -39,7 +39,7 @@
 <script src="../assets2/plugins/datatables/dataTables.bootstrap.min.js"></script>
 
 <!-- password -->
-<script src="../assets/dist/password.js"></script>
+<!-- <script src="../assets/dist/password.js"></script> -->
 
 
 <script language="JavaScript" type="text/JavaScript">
@@ -48,10 +48,11 @@
     if (restore) selObj.selectedIndex=0;
   }
 </script>
+<script src="js/script.js"></script>
 
 
 <!-- function generate password javascript -->
-<script>
+<!-- <script>
     function generate( length = 10 ){
       var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       var lowercase = 'abcdefghijklmnopqrstuvwxyz';
@@ -69,34 +70,34 @@
 
       return password;
   }
-</script>
+</script> -->
 <!-- function generate password javascript -->
 
 <!-- generate password dengan button -->
-<script>
+<!-- <script>
     window.onload = function (){
       var generateButton = document.querySelector('#generate');
       generateButton.addEventListener('click', function(){        
         document.querySelector('#password').value = generate();
       });
     }
-</script>
+</script> -->
 <!-- generate password dengan button -->
 
 <!-- generate password dengan keypress texbox username -->
-<script>
+<!-- <script>
     window.onload = function (){
       var generateButton = document.querySelector('#username');
       generateButton.addEventListener('keypress', function(){        
         document.querySelector('#password').value = generate();
       });
     }
-</script>
+</script> -->
 <!-- generate password dengan keypress texbox username -->
-
+<!-- <script src="js/password_generate.js"></script> -->
 
 <!-- toggle hide/show -->
-  <script>
+  <!-- <script>
     $(document).ready(function(){
       $("#tampil").hide();
     });
@@ -108,11 +109,11 @@
         $("#tampil").toggle();
       });
     });
-  </script>
+  </script> -->
   <!-- toggle hide/show -->
 
  <!-- back-to-top -->
-  <script>
+  <!-- <script>
   $(document).ready(function(){
    $(window).scroll(function () {
           if ($(this).scrollTop() > 50) {
@@ -133,7 +134,8 @@
       $('#back-to-top').tooltip('show');
 
   });
-  </script>
+  </script> -->
+  <!-- <script src="js/back_to_top.js"></script> -->
 
 <!-- page script -->
 <script>
@@ -271,6 +273,61 @@
 <script src="../assets2/dist/js/demo.js"></script>
 <!-- Ionicons -->
 <!-- <script src="../assets2/plugins/ionicons/docs/css/ionicons.js"></script> -->
+
+<!-- sweet alert -->
+<script src="../assets/dist/sweetalert.min.js"></script>
+<script src="../assets/dist/bootstrap-notify.min.js"></script>
+
+<?php 
+  if (isset($_GET['message'])) {
+    
+    if ($_GET['message'] == 'error') {
+      
+      echo '<script language="javascript">swal("Sorry!", "The email or phone number you entered already exists!", "error");</script>';
+    }
+
+    elseif ($_GET['message'] == 'error2') {
+      
+      echo '<script language="javascript">swal("Sorry!", "Failed to register!", "error");</script>';
+    }
+
+    elseif ($_GET['message'] == 'sukses') {
+      
+      echo "<script language='javascript'>setTimeout(function(){
+      $.notify({
+        title: 'Input Complete : ',
+        message: 'Data Berhasil ditambahkan!',
+        icon: 'fa fa-check' 
+      },{
+        type: 'info'
+      });
+    });;</script>";
+  }
+
+  elseif ($_GET['message'] == 'delete') {
+      
+      echo '<script language="javascript">
+        swal({
+          title: "Are you sure?",
+          text: "Once deleted, you will not be able to recover this imaginary file!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Poof! Your imaginary file has been deleted!", {
+              icon: "success",
+            });
+          } else {
+            
+          }
+        });
+      </script>';
+  }
+}
+
+?>
 
 </body>
 </html>

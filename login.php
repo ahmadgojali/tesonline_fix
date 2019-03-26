@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Arwana Citramulia | Login</title>
+  <title>PT. Arwana Citramulia Tbk</title>
   <link rel="shortcut icon" href="assets/img/arna-logo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -31,7 +31,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href=""><b>Admin</b> Arnates Online </a>
+    <a href=""><b>Admin</b> Tes Online </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -51,11 +51,11 @@
       </div><br>
       <div class="row mt-3">
         <div class="col-xs-8">
-          <div class="checkbox icheck">
+         <!--  <div class="checkbox icheck">
             <label>
               <input type="checkbox"> Remember Me
             </label>
-          </div>
+          </div> -->
         </div>
         <!-- /.col -->
         <div class="col-xs-4">

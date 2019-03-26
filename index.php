@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Arwana Citramulia | Login</title>
+  <title>PT. Arwana Citramulia Tbk</title>
   <link rel="shortcut icon" href="assets/img/arna-logo.png">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -27,12 +27,29 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    body {
+         /*color: #fff;*/
+         background-image: url('assets/img/Home-Kolase.jpg');
+         background-size: cover;
+         background-attachment: fixed;
+         background-repeat: no-repeat;
+    }
+    #judul {
+      color: #fff;
+      /*color: #CE8C5F;*/
+      text-shadow: 2px 2px 1px #000;
+      /*display: none;*/
+      font-size: 26px;
+    }
+  </style>
 </head>
-<body class="hold-transition login-page">
+<!-- <body class="hold-transition login-page"> -->
+<body>
 <div class="login-box">
   <div class="login-logo">
    <!--  <img src="assets/img/arna-logo.png" alt="" width="100px" height="100px"><br> -->
-    <a href=""><b>Arwana</b> Citramulia</a>
+    <a href="" id="judul"><b>PT. Arwana Citramulia Tbk</b> </a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -52,11 +69,11 @@
       </div><br>
       <div class="row mt-3">
         <div class="col-xs-8">
-          <div class="checkbox icheck">
+          <!-- <div class="checkbox icheck">
             <label>
               <input type="checkbox"> Remember Me
             </label>
-          </div>
+          </div> -->
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
@@ -64,9 +81,9 @@
         </div>
         <!-- /.col -->
       </div><hr>
-      <div class="text-right">
+      <!-- <div class="text-right">
         Login sebagai Admin<a href="login.php"> disini</a>
-      </div>
+      </div> -->
     </form>
 
    <!--  <div class="social-auth-links text-center">
