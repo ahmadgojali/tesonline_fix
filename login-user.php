@@ -26,7 +26,7 @@
 
         $_SESSION['user'] = $session;
 
-        header("location:user/index.php");
+        header("location:user");
 
         }
 

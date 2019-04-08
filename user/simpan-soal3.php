@@ -27,7 +27,7 @@ include '../config/koneksi.php';
       $data    = mysqli_fetch_array($query);
       
       if ($data['id_user'] == $session){
-         echo "<script language='javascript'>window.alert('Maaf, Anda sudah mengerjakan tes ini sebelumnya.'), window.location = 'mulaisoal4.php';</script>";
+         echo "<script language='javascript'>window.alert('Maaf, Anda sudah mengerjakan tes ini sebelumnya.'), window.location = 'index.php?pages=mulai-soal-silogisme';</script>";
       }
 
       else {
@@ -56,14 +56,14 @@ include '../config/koneksi.php';
             $hasilinsert    = mysqli_query($connect, $insertnilai);
           }
 
-          header("location:mulaisoal4.php");
+          header("location:index.php?pages=mulai-soal-silogisme");
       }
     }
 
 
 
-    var_dump($kd_soal);
-    var_dump($pilihan);
+    // var_dump($kd_soal);
+    // var_dump($pilihan);
 
 
    //  $query = ("SELECT * from soal3");

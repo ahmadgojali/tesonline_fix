@@ -4,41 +4,8 @@
         <div class="col-12 col-md text-center">
           <img src="../assets/img/arna-logo.png" alt="" width="30" height="30">
           <!-- <img class="mb-2" src="../assets/img/logo.png" alt="" width="30" height="30"> -->
-          <h6 class="d-block mb-3 text-muted">Copyright © 2019 PT Arwana Citramulia TBK. All Rights Reserved.</h6>
+          <h6 class="d-block mb-3 text-muted">Copyright © <?= date('Y') ?> PT Arwana Citramulia TBK. All Rights Reserved.</h6>
         </div>
-        <!-- <div class="col-6 col-md">
-          <h5>Features</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Cool stuff</a></li>
-            <li><a class="text-muted" href="#">Random feature</a></li>
-            <li><a class="text-muted" href="#">Team feature</a></li>
-            <li><a class="text-muted" href="#">Stuff for developers</a></li>
-            <li><a class="text-muted" href="#">Another one</a></li>
-            <li><a class="text-muted" href="#">Last time</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>About</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Resource</a></li>
-            <li><a class="text-muted" href="#">Resource name</a></li>
-            <li><a class="text-muted" href="#">Another resource</a></li>
-            <li><a class="text-muted" href="#">Final resource</a></li>
-          </ul>
-        </div> -->
-    <!--     <div class="col-12 col-md text-center">
-          <h5>Contact</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">PT ARWANA CITRAMULIA TBK</a></li>
-            <li><a class="text-muted" href="#">SENTRA NIAGA PURI INDAH BLOK T2 NO. 24,</a></li>
-            <li><a class="text-muted" href="#">KEMBANGAN SELATAN, JAKARTA 11610</a></li>
-            <li><a class="text-muted" href="#">PHONE   : +62-21-58302363</a></li>
-            <li><a class="text-muted" href="#">FAX     : +62-21-58302361</a></li>
-            <li><a class="text-muted" href="#">EMAIL   :  INVESTOR@ARWANACITRA.COM</a></li>
-            </li>
-          </ul>
-   
-        </div> -->
       </div>
     </footer>
   <!-- container end -->
@@ -51,7 +18,7 @@
 </a>
 
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
- <script src="../assets/dist/jquery-3.3.1.min.js"></script>
+<script src="../assets/dist/jquery-3.3.1.min.js"></script>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script> -->
 <script src="../assets/dist/popper.min.js"></script>
@@ -73,34 +40,5 @@
       });
     });
   </script>
+<!-- icheck -->
 
-  <!-- back-to-top -->
-  <script>
-  $(document).ready(function(){
-   $(window).scroll(function () {
-          if ($(this).scrollTop() > 50) {
-              $('#back-to-top').fadeIn();
-          } else {
-              $('#back-to-top').fadeOut();
-          }
-      });
-      // scroll body to 0px on click
-      $('#back-to-top').click(function () {
-          $('#back-to-top').tooltip('hide');
-          $('body,html').animate({
-              scrollTop: 0
-          }, 800);
-          return false;
-      });
-      
-      $('#back-to-top').tooltip('show');
-
-  });
-  </script>
-  <!-- back-to-top -->
-
-  <!-- <script type = "text/javascript" >
-    function preventBack(){window.history.forward();}
-    setTimeout("preventBack()", 0);
-    window.onunload=function(){null};
-  </script> -->

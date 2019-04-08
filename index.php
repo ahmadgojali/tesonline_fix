@@ -1,3 +1,13 @@
+<?php 
+  session_start();
+  date_default_timezone_set('Asia/Jakarta');//Menyesuaikan waktu dengan tempat kita tinggal
+  // echo $timestamp = date('d M Y - H:i:s');//Menampilkan Jam Sekarang
+  if(isset($_SESSION['user'])){
+    if ($_SESSION['user']) {
+      header('location:user');
+    } 
+  } 
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +66,8 @@
     <center><img src="assets/img/arna-logo.png" alt="" width="100px" height="80px"><br></center>
     <!-- <p class="login-box-msg">Login sebagai User</p> -->
 
-    <form action="login-user.php" method="post" enctype="multipart/form-data">
+    <!-- <form action="login-user.php" method="post" enctype="multipart/form-data"> -->
+    <form action="" method="post" enctype="multipart/form-data">
       <div class="form-group has-feedback">
         <label for="username">Username</label>
         <input type="username" class="form-control" name="username" id="username" placeholder="Username">
@@ -73,6 +84,10 @@
             <label>
               <input type="checkbox"> Remember Me
             </label>
+          </div> -->
+          <!-- <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="admin" name="admin">
+            <label class="custom-control-label" for="admin">&nbsp;&nbsp; Admin</label>
           </div> -->
         </div>
         <!-- /.col -->
@@ -120,3 +135,48 @@
 </script>
 </body>
 </html>
+
+<?php 
+    
+    require "config/koneksi.php";
+
+    if (isset($_POST['login'])) {
+    
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      $hasil    = mysqli_query($connect, "SELECT * from user where username ='$username' and password ='$password' or email ='$username' and password ='$password'");
+      $data     = mysqli_fetch_array($hasil);
+      $session  = $data['id'];
+      $row      = mysqli_num_rows($hasil);
+      
+      if( $row >  0) {
+
+        $percobaan = mysqli_query($connect, "SELECT * FROM user where validasi = 0 and id = $data[id]");
+        // $data2     = mysqli_fetch_array($hasil);
+        $row2     = mysqli_num_rows($percobaan);
+
+        if ($row2 > 0) {
+
+        // $query = mysqli_query($connect, "UPDATE user SET validasi = 1, tanggal_tes = now() WHERE id = $data[id]");
+
+        $_SESSION['user'] = $session;
+
+        // header("location:user");
+        echo "<script language='javascript'>window.location = 'user';</script>";
+
+        }
+
+        else {
+          // echo "<script language='javascript'>window.alert('Maaf, Anda sudah pernah login sebelumnya.'), window.location = 'index.php';</script>"; 
+          echo "<script language='javascript'>window.alert('Maaf, Anda sudah pernah login sebelumnya.');</script>"; 
+        }
+
+
+      }else{
+        
+        // echo "<script language='javascript'>window.alert('Login gagal, masukkan username dan password anda dengan benar.'), window.location = 'index.php';</script>"; 
+        echo "<script language='javascript'>window.alert('Login gagal, masukkan username dan password anda dengan benar.');</script>"; 
+      }
+    }
+
+  ?>

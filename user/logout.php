@@ -6,5 +6,5 @@
 	unset($_SESSION['mulai3']);
 	unset($_SESSION['mulai4']);
 	unset($_SESSION['mulai5']);
-	header("location:../index.php"); 	// mengalihkan halaman ke login.php
+	header("location:../"); 	// mengalihkan halaman ke login.php
 ?>

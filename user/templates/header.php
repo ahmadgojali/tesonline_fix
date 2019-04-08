@@ -1,8 +1,23 @@
+<?php
+session_start();
+include '../config/koneksi.php';
+  if(isset($_SESSION['user'])){
+    $session = $_SESSION['user'];
+    $query   = mysqli_query($connect, "SELECT * FROM user WHERE id ='$session'") or die (mysql_error());
+    $data    = mysqli_fetch_array($query);
+  }
+  
+  else{
+    header("location:../");
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Arwana Citramulia</title>
+  <title>PT. Arwana Citramulia Tbk</title>
   <link rel="shortcut icon" href="../assets/img/arna-logo.png">
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">

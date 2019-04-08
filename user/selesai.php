@@ -1,18 +1,3 @@
-<?php
-session_start();
-include '../config/koneksi.php';
-  if(isset($_SESSION['user'])){
-    $session = $_SESSION['user'];
-    $query   = mysqli_query($connect, "SELECT * FROM user WHERE id ='$session'") or die (mysql_error());
-    $data    = mysqli_fetch_array($query);
-  }
-  
-  else{
-    header("location:../index.php");
-  }
-
-?>
-
 <?php include 'templates/header.php'; ?>
 
 <?php include 'templates/navbar.php'; ?>

@@ -1,169 +1,187 @@
-<?php
-session_start();
-include '../config/koneksi.php';
-  if(isset($_SESSION['user'])){
-    $session = $_SESSION['user'];
-    $query   = mysqli_query($connect, "SELECT * FROM user WHERE id ='$session'") or die (mysql_error());
-    $data    = mysqli_fetch_array($query);
-  }
-  
-  else{
-    header("location:../index.php");
-  }
-
-?>
-
 <?php include 'templates/header.php'; ?>
 
 <?php include 'templates/navbar.php'; ?>
 
-<div class="float-right mt-3 mr-5" id="posisi">
-  <a class="btn btn-outline-primary" href="#" id="timestamp"></a>
-</div>
+<?php 
+  
+  if (!isset($_GET['pages'])) {
+      
+      include 'inc.home.php';
+    }
 
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Ujian Online</h1>
-  <p class="lead">Selamat Datang <b><?= $data['nama'] ?></b> di Sistem Recruitment Online</p>
-</div>
-<!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h3 class="">Selamat Datang, <?= $data['nama'] ?></h3>
-  <p class="lead"> </p>
-</div> -->
+    else {
 
-<!-- <div class="row">
-  <div class="col-md-2">
-     
-  </div>
-
-  <div class="col-md-8">
-     <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal text-center">Petunjuk Pengerjaan Sub Tes 2</h4>
-      </div>
-      <div class="card-body">
-        <div class="panel-body"> -->
-          <!-- isi petunjuk disini      -->
-<!--        </div>
-        
-        <center>
-          <a href="soal2.php" class="btn btn-md btn-primary text-center">Mulai</a>
-        </center>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-2">
-     
-  </div>
-</div>
- -->
-<!-- <div class="container"> -->
-<!-- collapse soal 1 show yang lain hide -->
-<div class="row">
-  <div class="col-md-2">
-     
-  </div>
-
-  <div class="col-8">
-    <div class="card text-center">
-      <div class="card-header lead">
-       Data Diri Peserta Tes
-      </div>
-      <div class="card-body text-lg-left">
-       <div class="row">
-          <div class="col-md-4">
-           
-         </div>
-         <div class="col-md-2 lead">
-           <div class="row">Nama</div>
-           <div class="row">Umur</div>
-           <div class="row">No HP</div>
-           <div class="row">Pendidikan</div>
-           <div class="row">Tangal Tes</div>
-         </div>
-         <div class="col-md-1 lead">
-           <div class="row">:</div>
-           <div class="row">:</div>
-           <div class="row">:</div>
-           <div class="row">:</div>
-           <div class="row">:</div>
-         </div>
-         <div class="col-md-5 lead">
-          <div class="row"><?= $data['nama'] ?></div>
-           <div class="row"><?= $data['umur'] ?></div>
-           <div class="row"><?= $data['no_telp'] ?></div>
-           <div class="row"><?= $data['pendidikan'] ?></div>
-           <div class="row"><?= $data['tanggal_tes'] ?></div>
-         </div>
-       </div>
-      </div>
-      <div class="card-footer text-muted">
-       <a href="mulaisoal1.php" class="btn btn-primary">Mulai</a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="col-md-2">
-     
-  </div>
-</div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
+      include 'inc.pages.php';
+    }
+ ?>
 
 <?php include 'templates/footer.php'; ?>
 
-<!-- menampilkan waktu realtime -->
-<script>
-// Function ini dijalankan ketika Halaman ini dibuka pada browser
-$(function(){
-  setInterval(timestamp, 1000);//fungsi yang dijalan setiap detik, 1000 = 1 detik
-});
- 
-//Fungi ajax untuk Menampilkan Jam dengan mengakses File ajax_timestamp.php
-function timestamp() {
-  $.ajax({
-    url: 'ajax-jam.php',
-    success: function(data) {
-    $('#timestamp').html(data);
-    },
+<!-- back-to-top -->
+  <script>
+  $(document).ready(function(){
+   $(window).scroll(function () {
+          if ($(this).scrollTop() > 50) {
+              $('#back-to-top').fadeIn();
+          } else {
+              $('#back-to-top').fadeOut();
+          }
+      });
+      // scroll body to 0px on click
+      $('#back-to-top').click(function () {
+          $('#back-to-top').tooltip('hide');
+          $('body,html').animate({
+              scrollTop: 0
+          }, 800);
+          return false;
+      });
+      
+      $('#back-to-top').tooltip('show');
+
   });
-}
-</script>
+  </script>
+  <!-- back-to-top -->
 
-<!-- hide/show button -->
-<!-- <script>
-   $(document).ready(function() {
-  
-     $("#tombol2").click(function() {
-       // $("#button2").disabled = false;
-       $("#button2").show();
-     })
-  
-     $("#tombol_show").click(function() {
-       $("#box").show();
-     })
-  
-   });
+  <!-- mematikan tombol back pada browser -->
+  <script type = "text/javascript" >
+    function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+  </script>
+  <!-- mematikan tombol back pada browser -->
 
-</script> -->
+  <!-- menampilkan waktu realtime dengan ajax-->
+  <script>
+    // Function ini dijalankan ketika Halaman ini dibuka pada browser
+    $(function(){
+      setInterval(timestamp, 1000);//fungsi yang dijalan setiap detik, 1000 = 1 detik
+    });
+     
+    //Fungi ajax untuk Menampilkan Jam dengan mengakses File ajax_timestamp.php
+    function timestamp() {
+      $.ajax({
+        url: 'ajax-jam.php',
+        success: function(data) {
+        $('#timestamp').html(data);
+        },
+      });
+    }
+  </script>
+  <!-- menampilkan waktu realtime dengan ajax-->
 
-<!-- mematikan tombol back pada browser -->
-<script type = "text/javascript" >
-  function preventBack(){window.history.forward();}
-  setTimeout("preventBack()", 0);
-  window.onunload=function(){null};
-</script>
+  <!-- fungsi validasi angka dan operator mtk hanya angka tidak abjad  -->
+  <script>
+    function validate(evt) {
+    var theEvent = evt || window.event;
+
+      // Handle paste
+      if (theEvent.type === 'paste') {
+          key = event.clipboardData.getData('text/plain');
+      } else {
+      // Handle key press
+          var key = theEvent.keyCode || theEvent.which;
+          key = String.fromCharCode(key);
+      }
+      var regex = /[0-9+-/*]|\./;
+      if( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+    }
+  </script>
+  <!-- fungsi validasi angka dan operator mtk -->
+
+  <!-- fungsi validasi angka dan operator mtk -->
+  <script>
+    function validate2(evt) {
+    var theEvent = evt || window.event;
+
+      // Handle paste
+      if (theEvent.type === 'paste') {
+          key = event.clipboardData.getData('text/plain');
+      } else {
+      // Handle key press
+          var key = theEvent.keyCode || theEvent.which;
+          key = String.fromCharCode(key);
+      }
+      var regex = /[0-9+-/*ABCDEabcde]|\./;
+      if( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+    }
+  </script>
+  <!-- fungsi validasi angka dan operator mtk -->
+
+  <script type="text/javascript">
+
+        $(document).ready(function() {
+            /** Membuat Waktu Mulai Hitung Mundur Dengan 
+                * var detik;
+                * var menit;
+                * var jam;
+            */
+            var detik   = <?= $detik; ?>;
+            var menit   = <?= $menit; ?>;
+            var jam     = <?= $jam; ?>;
+                  
+            /**
+               * Membuat function hitung() sebagai Penghitungan Waktu
+            */
+            function hitung() {
+                /** setTimout(hitung, 1000) digunakan untuk 
+                     * mengulang atau merefresh halaman selama 1000 (1 detik) 
+                */
+                setTimeout(hitung,1000);
+  
+                /** Jika waktu kurang dari 10 menit maka Timer akan berubah menjadi warna merah */
+                if(menit < 2 && jam == 0){
+                    var peringatan = 'style="color:red"';
+                };
+  
+                /** Menampilkan Waktu Timer pada Tag #Timer di HTML yang tersedia */
+                $('#timer').html(
+                    '<h4 align="center"'+peringatan+'>Sisa waktu anda <br />' + jam + ' jam : ' + menit + ' menit : ' + detik + ' detik</h4><hr>'
+                );
+  
+                /** Melakukan Hitung Mundur dengan Mengurangi variabel detik - 1 */
+                detik --;
+  
+                /** Jika var detik < 0
+                    * var detik akan dikembalikan ke 59
+                    * Menit akan Berkurang 1
+                */
+                if(detik < 0) {
+                    detik = 59;
+                    menit --;
+  
+                   /** Jika menit < 0
+                        * Maka menit akan dikembali ke 59
+                        * Jam akan Berkurang 1
+                    */
+                    if(menit < 0) {
+                        menit = 59;
+                        jam --;
+  
+                        /** Jika var jam < 0
+                            * clearInterval() Memberhentikan Interval dan submit secara otomatis
+                        */
+                             
+                        if(jam < 0) { 
+                            clearInterval(hitung); 
+                            /** Variable yang digunakan untuk submit secara otomatis di Form */
+                            var frmSoal = document.getElementById("frmSoal"); 
+                           // alert('Maaf, Waktu pengerjaan untuk soal tes ke-1 ini telah habis, lanjut ke tes berikutnya.');
+                            frmSoal.submit(); 
+                        } 
+                    } 
+                } 
+            }           
+            /** Menjalankan Function Hitung Waktu Mundur */
+            hitung();
+        });
+    
+    </script>
 
 </body>
 </html>
